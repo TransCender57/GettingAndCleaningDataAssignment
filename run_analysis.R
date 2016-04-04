@@ -56,6 +56,12 @@ averagesPerSubjectAndActivity <- keep %>%
   group_by(Subject, Activity) %>%
   summarise_each(funs(mean(., na.rm = TRUE)))
 
-# Save the last summary to a file
-write.table(as.data.frame(averagesPerSubjectAndActivity), file = "AveragesPerSubjectAndActivity.txt", row.name = FALSE)
-
+# For the last summary make the feature names more human readable
+names(averagesPerSubjectAndActivity) <- gsub("-", "_", names(averagesPerSubjectAndActivity))
+names(averagesPerSubjectAndActivity) <- gsub("^t", "time_", names(averagesPerSubjectAndActivity))
+names(averagesPerSubjectAndActivity) <- gsub("^f", "frequency_", names(averagesPerSubjectAndActivity))
+names(averagesPerSubjectAndActivity) <- gsub("Acc", "Accelerometer", names(averagesPerSubjectAndActivity))
+names(averagesPerSubjectAndActivity) <- gsub("Gyro", "Gyroscope", names(averagesPerSubjectAndActivity))
+names(averagesPerSubjectAndActivity) <- gsub("Mag", "Magnitude", names(averagesPerSubjectAndActivity))
+names(averagesPerSubjectAndActivity) <- gsub("BodyBody", "Body", names(averagesPerSubjectAndActivity))
+names(averagesPerSubjectAndActivity) <- gsub("\\(\\)", "", names(averagesPerSubjectAndActivity))
