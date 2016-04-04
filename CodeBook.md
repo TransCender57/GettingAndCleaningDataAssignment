@@ -29,10 +29,10 @@ each pattern:
 run_analysis.R keeps the following features and computes the mean for these
 features for each subject and activity:
 
-Original Name                           New Name
-tBodyAcc-mean()-X                       time_BodyAccelerometer_mean_X
-tBodyAcc-mean()-Y                       time_BodyAccelerometer_mean_Y
-tBodyAcc-mean()-Z                       time_BodyAccelerometer_mean_Z
+|Original Name|New Name|
+|tBodyAcc-mean()-X|time_BodyAccelerometer_mean_X|
+|tBodyAcc-mean()-Y                       time_BodyAccelerometer_mean_Y
+|tBodyAcc-mean()-Z                       time_BodyAccelerometer_mean_Z
 tBodyAcc-std()-X                        time_BodyAccelerometer_std_X
 tBodyAcc-std()-Y                        time_BodyAccelerometer_std_Y
 tBodyAcc-std()-Z                        time_BodyAccelerometer_std_Z
